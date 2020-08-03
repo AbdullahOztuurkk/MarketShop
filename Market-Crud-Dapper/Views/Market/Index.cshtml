@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Market_Crud_Dapper.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Add Product","Save",new { @class="btn btn-success"})
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+        <th>@Html.DisplayNameFor(model => model.Category)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductDescription)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductCode)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductPrice)</th>
+        <th>Ayarlar</th>
+    </tr>
+    @foreach (var products in Model)
+        {
+            <tr>
+                <td>@products.ProductName</td>
+                <td>@products.Category</td>
+                <td>@products.ProductDescription</td>
+                <td>@products.ProductCode</td>
+                <td>@products.ProductPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = products.Id}, new {@class = "btn btn-warning"})
+                    @Html.ActionLink("Delete", "Delete", new {id = products.Id}, new {@class = "btn btn-danger"})
+                </td>
+            </tr>
+        }
+
+</table>
