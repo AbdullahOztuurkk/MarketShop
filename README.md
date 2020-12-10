@@ -1,4 +1,4 @@
-# Market-CRUD-Dapper
+# Market Shop Project
 
 ##### This is a web application to upload,create,list and delete products for markets.I know , this project is easy but it was informative.
 
